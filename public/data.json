@@ -1,0 +1,68 @@
+[
+    {
+       "name": "Head first C#",
+       "slug": "head-first-Csharp",
+       "category": "Computer Science",
+       "image": "https://cdn01.sapnaonline.com/product_media/9789351103530/md_9789351103530_100720211109653.jpg",
+       "price": 70,
+       "rating": 4.5,
+       "numReviews": 10,
+       "countInStock": 20,
+       "description": "A popular shirt"
+    },
+    {
+       "name": "JS Simplyfied",
+       "slug": "js-simplified",
+       "category": "Computer Science",
+       "image": "https://cdn01.sapnaonline.com/product_media/9789351103530/md_9789351103530_100720211109653.jpg",
+       "price": 80,
+       "rating": 4.2,
+       "numReviews": 10,
+       "countInStock": 20,
+       "description": "A popular shirt"
+    },
+    {
+       "name": "Head first JS",
+       "slug": "head-first-js",
+       "category": "Computer Science",
+       "image": "https://cdn01.sapnaonline.com/product_media/9789351103530/md_9789351103530_100720211109653.jpg",
+       "price": 90,
+       "rating": 4.5,
+       "numReviews": 10,
+       "countInStock": 20,
+       "description": "A popular shirt"
+    },
+    {
+       "name": "Macbeth",
+       "slug": "macbeth",
+       "category": "Novel",
+       "image": "https://cdn01.sapnaonline.com/product_media/9789351103530/md_9789351103530_100720211109653.jpg",
+       "price": 90,
+       "rating": 4.5,
+       "numReviews": 10,
+       "countInStock": 20,
+       "description": "Smart looking book"
+    },
+    {
+       "name": "Merchant of venice",
+       "slug": "merchant-of-venice",
+       "category": "Novel",
+       "image": "https://cdn01.sapnaonline.com/product_media/9789351103530/md_9789351103530_100720211109653.jpg",
+       "price": 95,
+       "rating": 4.5,
+       "numReviews": 10,
+       "countInStock": 20,
+       "description": "A popular book"
+    },
+    {
+       "name": "Our Universe",
+       "slug": "our-universe",
+       "category": "Sci-fi",
+       "image": "https://cdn01.sapnaonline.com/product_media/9789351103530/md_9789351103530_100720211109653.jpg",
+       "price": 75,
+       "rating": 4.5,
+       "numReviews": 10,
+       "countInStock": 20,
+       "description": "A popular book"
+    }
+ ]
