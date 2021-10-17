@@ -9,7 +9,7 @@ export default function Book(props) {
     const { name, description, price, image } = props.book;
     console.log(image);
     return (
-        <Grid item md={3} xs={12}>
+        <Grid justifyContent item md={3} xs={12}>
             <Card sx={{}}>
                 <CardActionArea>
                     <CardMedia
@@ -18,22 +18,22 @@ export default function Book(props) {
                         image={image}
                         alt={name}
                     />
-                    <CardContent>
+                    <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Typography gutterBottom variant="h5" component="div">
                             {name}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                             {description}
                         </Typography>
-                        <Typography gutterBottom variant="h5" component="div">
-                            {price}
+                        <Typography gutterBottom variant="h6" component="div">
+                            Price: {price}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
-                <CardActions>
-                    <Button size="large" color="primary">
-                        Add To cart
-                    </Button>
+                <CardActions sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <Button color="primary" variant="contained">   Add To cart</Button>
+
+
                 </CardActions>
             </Card>
         </Grid>
