@@ -8,15 +8,21 @@ import Books from '../../components/Books/Books';
 export default function Home() {
     return (
         <Fragment>
-            <Box sx={{
-                display: 'block',
-                height: 150,
-                width: '100%',
-                mt: -50,
-            }} >
-                <img src={headerImage} alt="header" />
-                <Books></Books>
+            <Box
+                component="img"
+                sx={{
+                    display: 'block',
+                    height: 550,
+                    maxHeight: { xs: 233, md: 550 },
+                    maxWidth: { xs: 1, md: 1 },
+                    width: '100%',
+                }}
+                alt="Cover"
+                src={headerImage} >
+
             </Box>
+            <Books></Books>
+
         </Fragment >
     );
 }

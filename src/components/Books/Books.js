@@ -26,9 +26,10 @@ export default function Books() {
 
     };
 
+
     return (
         <Fragment>
-            <Container>
+            <Container sx={{ textAlign: "center" }} >
                 <TextField
                     onChange={(e) => handleSearch(e)}
                     sx={{
@@ -43,17 +44,18 @@ export default function Books() {
                     container
                     spacing={5}
                 >
-                    {
+                    {displayBooks.length > 0 ?
+
                         displayBooks.map(book =>
                             <Book
                                 key={book.name}
                                 book={book}
                             >
                             </Book>
-                        )
+                        ) : <h1>No Books Found </h1>
                     }
                 </Grid>
             </Container>
-        </Fragment>
+        </Fragment >
     );
 }
