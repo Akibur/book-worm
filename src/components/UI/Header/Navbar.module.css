@@ -1,0 +1,17 @@
+.Nav_link {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+.Nav_link:visited {
+  color: #fff;
+}
+.Nav_link:hover {
+  color: white;
+  border-bottom: 2px solid #fff;
+}
+.Nav_link:active {
+  color: white;
+  border-bottom: 2px solid #fff;
+}

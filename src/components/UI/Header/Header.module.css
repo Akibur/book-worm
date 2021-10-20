@@ -1,0 +1,36 @@
+.Nav_link:link {
+  color: #fff;
+  text-decoration: none;
+}
+.Nav_link:visited {
+  color: #fff;
+}
+.Nav_link:hover {
+  color: white;
+  border-bottom: 2px solid #fff;
+}
+.Nav_link:active {
+  color: white;
+  border-bottom: 2px solid #fff;
+}
+
+.Logo:link {
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  text-decoration: none;
+}
+.Logo:visited {
+  color: #fff;
+}
+.Logo:hover {
+  color: white;
+}
+.Logo:active {
+  color: white;
+}
+
+.activeRoute {
+  /* border-bottom: 0.4rem solid teal; */
+  cursor: not-allowed;
+}
