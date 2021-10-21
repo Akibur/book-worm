@@ -1,5 +1,6 @@
 [
     {
+       "id":1,
        "name": "Head first C#",
        "slug": "head-first-Csharp",
        "category": "Computer Science",
@@ -11,6 +12,7 @@
        "description": "A popular shirt"
     },
     {
+      "id":2,
        "name": "JS Simplyfied",
        "slug": "js-simplified",
        "category": "Computer Science",
@@ -21,7 +23,7 @@
        "countInStock": 20,
        "description": "A popular shirt"
     },
-    {
+    {"id":3,
        "name": "Head first JS",
        "slug": "head-first-js",
        "category": "Computer Science",
@@ -32,7 +34,7 @@
        "countInStock": 20,
        "description": "A popular shirt"
     },
-    {
+    {"id":4,
        "name": "Macbeth",
        "slug": "macbeth",
        "category": "Novel",
@@ -43,7 +45,7 @@
        "countInStock": 20,
        "description": "Smart looking book"
     },
-    {
+    {"id":5,
        "name": "Merchant of venice",
        "slug": "merchant-of-venice",
        "category": "Novel",
@@ -54,7 +56,7 @@
        "countInStock": 20,
        "description": "A popular book"
     },
-    {
+    {"id":6,
        "name": "Our Universe",
        "slug": "our-universe",
        "category": "Sci-fi",

@@ -1,4 +1,5 @@
 import { CssBaseline, Toolbar, useMediaQuery, useTheme } from "@mui/material";
+import { Box } from "@mui/system";
 import React, { Fragment } from "react";
 // import {
 //     AppBar,
@@ -28,11 +29,13 @@ function Navbar() {
                 {isMobile ? (
                     <DrawerComponent />
                 ) : (
-                    <div sx={{
-                        marginLeft: 3,
+                    <Box sx={{
                         display: "flex",
-
+                        flexDirection: 'row',
+                        justifyContent: 'flex-start',
+                        mx: 'auto',
                     }}>
+
                         <NavLink to="/" className={classes.Nav_link}>
                             Home
                         </NavLink>
@@ -42,8 +45,7 @@ function Navbar() {
                         <NavLink to="/contact" className={classes.Nav_link}>
                             Contact
                         </NavLink>
-
-                    </div>
+                    </Box>
                 )}
             </Toolbar>
         </Fragment>

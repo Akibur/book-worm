@@ -4,10 +4,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions, Grid } from '@mui/material';
+import CartContext from '../../../store/Cart/CartContext';
 
 export default function Book(props) {
+
     const { name, description, price, image } = props.book;
     console.log(image);
+
+    const cartCtx = React.useContext(CartContext);
+
+
     return (
         <Grid justifyContent item md={3} xs={12}>
             <Card sx={{}}>
@@ -31,7 +37,7 @@ export default function Book(props) {
                     </CardContent>
                 </CardActionArea>
                 <CardActions sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Button color="primary" variant="contained">   Add To cart</Button>
+                    <Button onClick={() => cartCtx.addItem(props.book)} color="primary" variant="contained">   Add To cart</Button>
 
 
                 </CardActions>
