@@ -36,9 +36,29 @@ const removeFromDb = id => {
     }
 };
 
-const getStoredCart = () => {
+const getStoredCart = (books) => {
     const exists = getDb();
-    return exists ? JSON.parse(exists) : {};
+
+    if (exists) {
+        let savedCart = JSON.parse(exists);
+        const localCart = [];
+        for (const key in savedCart) {
+            const addedBook = books.find(book => book.id == key);
+            console.log(addedBook);
+            if (addedBook) {
+                // set quantity
+                const quantity = savedCart[key];
+                addedBook.quantity = quantity;
+                localCart.push(addedBook);
+            }
+        }
+        return localCart;
+
+    } else {
+        return {};
+    }
+
+
 };
 
 const clearTheCart = () => {
