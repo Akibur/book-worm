@@ -11,16 +11,13 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
-    const emailsignup = (email, password) => {
+    const emailSignup = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
     const emailLogin = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password);
     };
-
-
-
 
     const signInUsingGoogle = () => {
         return signInWithPopup(auth, googleProvider)
@@ -40,6 +37,7 @@ const useFirebase = () => {
 
     // observe whether user auth state changed or not
     useEffect(() => {
+        console.log("Checking User Auth State");
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
@@ -57,7 +55,7 @@ const useFirebase = () => {
         loading,
         signInUsingGoogle,
         logOut,
-        emailsignup,
+        emailSignup,
         emailLogin
     };
 };
