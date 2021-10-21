@@ -11,6 +11,8 @@ import Home from './pages/Home/Home';
 import Shop from './pages/Shop/Shop';
 import Layout from './components/UI/Layout/Layout';
 import AuthProvider from './store/AuthProvider';
+import CartProvider from './store/Cart/CartProvider';
+import { Cart } from './pages/Cart/Cart';
 
 
 
@@ -19,29 +21,34 @@ import AuthProvider from './store/AuthProvider';
 export default function App() {
   return (
     <AuthProvider>
-      <Layout>
-        <Router>
-          <Header></Header>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/home">
-              <Home />
-            </Route>
-            <Route path="/shop">
-              <Shop />
-            </Route>
-            <Route path="*">
-              <PageNotFound />
-            </Route>
-          </Switch>
-        </Router>
-      </Layout>
-      <Footer></Footer>
+      <CartProvider>
+        <Layout>
+          <Router>
+            <Header></Header>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/home">
+                <Home />
+              </Route>
+              <Route path="/shop">
+                <Shop />
+              </Route>
+              <Route path="/cart">
+                <Cart />
+              </Route>
+              <Route path="*">
+                <PageNotFound />
+              </Route>
+            </Switch>
+          </Router>
+        </Layout>
+        <Footer></Footer>
 
 
 
+      </CartProvider>
 
 
     </AuthProvider>
