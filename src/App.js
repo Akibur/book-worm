@@ -1,4 +1,6 @@
-import * as React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useEffect } from 'react';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,44 +15,61 @@ import Layout from './components/UI/Layout/Layout';
 import AuthProvider from './store/AuthProvider';
 import CartProvider from './store/Cart/CartProvider';
 import { Cart } from './pages/Cart/Cart';
-
-
-
+import { BookDetail } from './pages/BookDetail/BookDetail';
+import ScroolToTop from './components/ScroolToTop';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import CartContext from './store/Cart/CartContext';
+import { getStoredCart } from './utils/localStorage';
+import useBooks from './hooks/useBooks';
 
 
 export default function App() {
+
   return (
     <AuthProvider>
       <CartProvider>
         <Layout>
           <Router>
-            <Header></Header>
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/home">
-                <Home />
-              </Route>
-              <Route path="/shop">
-                <Shop />
-              </Route>
-              <Route path="/cart">
-                <Cart />
-              </Route>
-              <Route path="*">
-                <PageNotFound />
-              </Route>
-            </Switch>
+            <ScroolToTop>
+              <Header></Header>
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="/home">
+                  <Home />
+                </Route>
+                <Route path="/shop">
+                  <Shop />
+                </Route>
+                <Route path="/login">
+                  <Login />
+                </Route>
+                <Route path="/register">
+                  <Register />
+                </Route>
+                <Route path="/cart">
+                  <Cart />
+                </Route>
+                <Route path="/book/:id">
+                  <BookDetail />
+                </Route>
+                <Route path="*">
+                  <PageNotFound />
+                </Route>
+              </Switch>
+            </ScroolToTop>
           </Router>
         </Layout>
         <Footer></Footer>
 
 
 
+
       </CartProvider>
 
 
-    </AuthProvider>
+    </AuthProvider >
   );
 }

@@ -35,7 +35,6 @@ const Login = () => {
     const handleGoogleLogin = () => {
         signInUsingGoogle()
             .then(() => {
-                console.log(redirect_uri);
                 history.push(redirect_uri);
             }).catch((err) => {
                 console.log(err);

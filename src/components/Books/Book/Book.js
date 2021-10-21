@@ -5,19 +5,22 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions, Grid } from '@mui/material';
 import CartContext from '../../../store/Cart/CartContext';
+import { useHistory } from 'react-router-dom';
 
 export default function Book(props) {
 
-    const { name, description, price, image } = props.book;
-    console.log(image);
+    const { id, name, description, price, image } = props.book;
 
     const cartCtx = React.useContext(CartContext);
-
+    const history = useHistory();
+    const bookDetailsHandler = (id) => {
+        history.push(`/book/${id}`);
+    };
 
     return (
         <Grid justifyContent item md={3} xs={12}>
             <Card sx={{}}>
-                <CardActionArea>
+                <CardActionArea onClick={() => bookDetailsHandler(id)}>
                     <CardMedia
                         component="img"
                         height="350"

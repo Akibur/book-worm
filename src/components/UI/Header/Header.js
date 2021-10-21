@@ -20,7 +20,9 @@ import CartContext from '../../../store/Cart/CartContext';
 export default function Header() {
     const { user, logOut } = useAuth();
     const cartCtx = useContext(CartContext);
+
     const totalItems = cartCtx.items.length;
+
 
 
 
@@ -39,13 +41,13 @@ export default function Header() {
                             </NavLink>
                         </Typography>
                         <Navbar />
-                        {user.email && <span style={{ color: 'white' }}>Hello {user.displayName} </span>}
+                        {user.email && <span style={{ color: 'white' }}>Hi {user.displayName} </span>}
                         {user.email ?
                             (<IconButton onClick={logOut} sx={{ mx: 1 }} edge="end" color="secondary" aria-label="account" >
                                 <Typography>
                                     Logout
                                 </Typography>
-                                <AccountCircle />
+                                <AccountCircle sx={{ mr: 3 }} />
                             </IconButton>)
                             :
                             (
@@ -59,12 +61,9 @@ export default function Header() {
                                     </Typography>
                                     <AccountCircle sx={{ mr: 3 }} />
                                 </>
-
-
                             )}
                         <NavLink
                             className={classes.cart}
-
                             to="/cart">
                             <Badge badgeContent={totalItems} color="error">
                                 <IconButton edge="end" color="inherit" aria-label="cart" >

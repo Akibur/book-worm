@@ -10,9 +10,6 @@ export const Cart = () => {
     const hasItemsInCart = cartCtx.items.length > 0;
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
 
-
-
-
     const cartItemRemoveHandler = (item) => {
         cartCtx.removeItem(item);
     };

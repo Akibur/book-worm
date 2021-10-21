@@ -18,7 +18,6 @@ export const BookDetail = () => {
             .then(res => res.json())
             .then(data => {
                 const plan = data.find((el) => el.id == id);
-                console.log(plan);
                 setBook(plan);
             }).catch((err) => {
                 console.log(err);

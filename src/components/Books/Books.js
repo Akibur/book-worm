@@ -1,23 +1,23 @@
+/* eslint-disable no-unused-vars */
 import { Container, Grid, TextField } from '@mui/material';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect } from 'react';
+import useBooks from '../../hooks/useBooks';
+import CartContext from '../../store/Cart/CartContext';
+import { getStoredCart } from '../../utils/localStorage';
 import Book from './Book/Book';
 
 export default function Books() {
-    const [books, setBooks] = useState([]);
-    const [displayBooks, setDisplayBooks] = useState([]);
+    const [books,
+        displayBooks,
+        setDisplayBooks] = useBooks();
 
 
-    useEffect(() => {
-        fetch('./data.json')
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setBooks(data);
-                setDisplayBooks(data);
-            }).catch((err) => {
-                console.log(err);
-            });
-    }, []);
+
+
+
+
+
+
 
     const handleSearch = (e) => {
         const searchText = e.target.value;
@@ -47,9 +47,11 @@ export default function Books() {
                     {displayBooks.length > 0 ?
 
                         displayBooks.map(book =>
+
                             <Book
-                                key={book.name}
+                                key={book.id}
                                 book={book}
+
                             >
                             </Book>
                         ) : <h1>No Books Found </h1>

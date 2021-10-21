@@ -12,7 +12,6 @@ const CartItem = (props) => {
                     component="img"
                     src={props.img}
                     sx={{ width: '30%' }}
-
                 ></Box>
                 <h2>{props.name}</h2>
 
