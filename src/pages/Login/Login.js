@@ -1,4 +1,5 @@
-import { Alert, Button, Container, TextField } from '@mui/material';
+import { Alert, Button, CircularProgress, Container, TextField } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { useRef, useState } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
@@ -50,10 +51,15 @@ const Login = () => {
                 <br />
                 <TextField fullWidth inputRef={passwordRef} type="password" sx={{ my: 1 }} id="outlined-basic" label="Password" variant="outlined" />
                 <br />
-                <Button fullWidth disabled={loading} onClick={handleSubmit} sx={{ my: 1 }} variant="contained">Sign In</Button>
+
+                {loading ? (<Box sx={{ display: 'flex' }}>
+                    <CircularProgress />
+                </Box>) : <Button fullWidth disabled={loading} onClick={handleSubmit} sx={{ my: 1 }} variant="contained">Sign In</Button>}
                 <p>Dont have an account? <Link to="/register">Create Account</Link></p>
-                <Button
-                    onClick={handleGoogleLogin} className={classes.textField} variant="contained">Sign In using Google</Button>
+
+                <Button onClick={handleGoogleLogin} className={classes.textField} variant="contained">Sign In using Google</Button>
+
+
             </div>
         </Container >
     );

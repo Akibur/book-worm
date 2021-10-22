@@ -1,4 +1,5 @@
-import { Alert, Button, Container, TextField } from '@mui/material';
+import { Alert, Button, CircularProgress, Container, TextField } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { useRef, useState } from 'react';
 import { Link, useHistory } from "react-router-dom";
 import useAuth from '../../hooks/useAuth';
@@ -14,7 +15,7 @@ export default function Register() {
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
-    const { emailsignup } = useAuth();
+    const { emailSignup } = useAuth();
 
 
     async function handleSubmit(e) {
@@ -27,7 +28,7 @@ export default function Register() {
         try {
             setError("");
             setLoading(true);
-            await emailsignup(emailRef.current.value, passwordRef.current.value);
+            await emailSignup(emailRef.current.value, passwordRef.current.value);
             history.push("/");
         } catch (e) {
             console.log(e);
@@ -49,7 +50,10 @@ export default function Register() {
                 <br />
                 <TextField fullWidth inputRef={passwordConfirmRef} type="password" sx={{}} id="outlined-basic" label="Re-Enter Password" variant="outlined" />
                 <br />
-                <Button fullWidth disabled={loading} onClick={handleSubmit} sx={{}} variant="contained">Register</Button>
+                {loading ? (<Box sx={{ display: 'flex' }}>
+                    <CircularProgress />
+                </Box>) : <Button fullWidth disabled={loading} onClick={handleSubmit} sx={{}} variant="contained">Register</Button>}
+
                 <p>Already have an account? <Link to="/login">Login</Link></p>
 
 
