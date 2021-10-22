@@ -19,12 +19,15 @@ const cartReducer = (state, action) => {
         console.log('INNIT Action called');
         let total = 0;
 
-        action.items.forEach((p) => {
-            total = total + (p.quantity * p.price);
-        });
+        if (action?.items) {
+            action.items?.forEach((p) => {
+                total = total + (p.quantity * p.price);
+            });
+        }
+
 
         return {
-            items: action.items,
+            items: action?.items,
             totalAmount: total,
         };
 
@@ -54,7 +57,6 @@ const cartReducer = (state, action) => {
             totalAmount: updatedTotalAmount,
         };
     }
-
     if (action.type === 'REMOVE') {
         const existingCartItemIndex = state.items.findIndex(
             (item) => item.id === action.item.id
@@ -76,6 +78,12 @@ const cartReducer = (state, action) => {
         return {
             items: updatedItems,
             totalAmount: updatedTotalAmount
+        };
+    }
+    if (action.type === "CLEAR") {
+        return {
+            items: [],
+            totalAmount: 0
         };
     }
 
@@ -100,7 +108,9 @@ const CartProvider = (props) => {
 
     //init stored Cart 
     useEffect(() => {
-        dispatChartAction({ type: "INIT", items: storedCart });
+        if (storedCart.length > 0) {
+            dispatChartAction({ type: "INIT", items: storedCart });
+        }
     }, [storedCart]);
 
 
@@ -116,12 +126,19 @@ const CartProvider = (props) => {
         dispatChartAction({ type: "INIT", items: items });
     };
 
+    const clearCartHandler = () => {
+        dispatChartAction({ type: "CLEAR", items: [] });
+    };
+
+
+
     const cartContext = {
         items: cartState.items,
         totalAmount: cartState.totalAmount,
         addItem: addToCartHandler,
         removeItem: removeFromCartHandler,
         cartInit: cartInitHandler,
+        clearCart: clearCartHandler,
     };
 
     return (

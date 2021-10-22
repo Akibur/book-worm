@@ -1,5 +1,6 @@
 import { Box } from '@mui/system';
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router';
 import CartItem from '../../components/CartItem/CartItem';
 import CartContext from '../../store/Cart/CartContext';
 import classes from './Cart.module.css';
@@ -7,8 +8,9 @@ import classes from './Cart.module.css';
 
 export const Cart = () => {
     const cartCtx = useContext(CartContext);
-    const hasItemsInCart = cartCtx.items.length > 0;
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+    const hasItemsInCart = cartCtx.items.length > 0;
+    const history = useHistory();
 
     const cartItemRemoveHandler = (item) => {
         cartCtx.removeItem(item);
@@ -17,6 +19,11 @@ export const Cart = () => {
     const cartItemAddHandler = (item) => {
         cartCtx.addItem({ ...item, amount: 1 });
     };
+
+    const checkoutHandler = () => {
+        history.push('/checkout');
+    };
+
     const cartItems = (
         <ul className={classes['cart-items']}>
             {cartCtx.items.map((item) => (
@@ -45,7 +52,7 @@ export const Cart = () => {
                     <span>{totalAmount}</span>
                 </div>
                 <div className={classes.actions}>
-                    <button className={classes.button}>Order</button>
+                    <button onClick={checkoutHandler} className={classes.button}>Checkout</button>
                 </div>
             </>)}
 

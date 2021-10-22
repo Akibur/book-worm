@@ -20,6 +20,7 @@ import CartContext from '../../../store/Cart/CartContext';
 export default function Header() {
     const { user, logOut } = useAuth();
     const cartCtx = useContext(CartContext);
+    console.log(user);
 
     const totalItems = cartCtx.items.length;
 

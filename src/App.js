@@ -24,6 +24,9 @@ import Contact from './pages/Contact/Contact';
 import CartContext from './store/Cart/CartContext';
 import { getStoredCart } from './utils/localStorage';
 import useBooks from './hooks/useBooks';
+import Checkout from './pages/Checkout/Checkout';
+import PrivateRoute from './utils/PrivateRoute';
+import OrderPlaced from './pages/OrderPlaced/OrderPlaced';
 
 
 export default function App() {
@@ -60,6 +63,12 @@ export default function App() {
                 <Route path="/cart">
                   <Cart />
                 </Route>
+                <PrivateRoute path="/checkout">
+                  <Checkout />
+                </PrivateRoute>
+                <PrivateRoute path="/orderPlaced">
+                  <OrderPlaced />
+                </PrivateRoute>
                 <Route path="/book/:id">
                   <BookDetail />
                 </Route>
