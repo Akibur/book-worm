@@ -8,6 +8,7 @@ Live Link : https://book-worm-8d826.web.app/
 -User can serach for books
 -User can add to cart
 -User can checkout
+<<<<<<< HEAD
 -User can Login with username and pass
 -User can Login with google sign in
 -User can Logout
