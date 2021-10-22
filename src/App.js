@@ -19,6 +19,8 @@ import { BookDetail } from './pages/BookDetail/BookDetail';
 import ScroolToTop from './components/ScroolToTop';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
 import CartContext from './store/Cart/CartContext';
 import { getStoredCart } from './utils/localStorage';
 import useBooks from './hooks/useBooks';
@@ -48,6 +50,12 @@ export default function App() {
                 </Route>
                 <Route path="/register">
                   <Register />
+                </Route>
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/contact">
+                  <Contact />
                 </Route>
                 <Route path="/cart">
                   <Cart />
